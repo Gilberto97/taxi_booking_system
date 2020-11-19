@@ -6,6 +6,11 @@ from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from django.core.mail import send_mail
 
+# ATTENTION! 
+# Below 'CustomUserManager' and 'User' classes are used to override default Django user logic.
+# It may be confusing, please don't worry if You don't understand it :)   
+# Regards, Prem
+
 class CustomUserManager(BaseUserManager):
     """
     Custom user model manager where email is the unique identifiers
