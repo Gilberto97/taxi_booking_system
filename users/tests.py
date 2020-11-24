@@ -39,7 +39,8 @@ class UserTestCase(TestCase):
         driver.save()
 
         customer = Customer(user=customer_user, phone_number="+441212121212", 
-            first_name="Alex", last_name="Smith")
+            first_name="Alex", last_name="Smith", card_number="1234123412341234", 
+            ccv_number="123")
         customer.save()
 
     # Let's check if users were created
@@ -48,7 +49,7 @@ class UserTestCase(TestCase):
         company = Company.objects.get(name="Melani Ltd")
         driver = Driver.objects.get(first_name="Prem")
         customer = Customer.objects.get(first_name="Alex")
-        
+
         # Now let's check if all users exists
         are_users_created = bool(company) and bool(driver) and bool(customer)
         self.assertEqual(are_users_created, True)
