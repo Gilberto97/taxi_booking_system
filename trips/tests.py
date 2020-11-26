@@ -1,5 +1,7 @@
 from django.test import TestCase
-from datetime import date
+from datetime import datetime
+from django.utils import timezone
+import pytz
 
 from users.models import User, Customer, Driver, Company 
 from .models import Trip 
@@ -30,13 +32,14 @@ class TripTestCase(TestCase):
             ccv_number="123")
         customer.save()
         
-        today = date.today()
+        timezone.now()
+        today = datetime(2013, 11, 20, 20, 8, 7, 127325, tzinfo=pytz.UTC)
         trip = Trip(customer=customer, pick_up_time=today, pick_up_place="Luton", drop_off_place="St. Albans", driver=driver)
         trip.save()
 
     def test_trip_created(self):
 
-        trip = Trip.object.get(pick_up_place="Luton")
+        trip = Trip.objects.get(pick_up_place="Luton")
         print(trip)
         self.assertEqual(2,2)
 
