@@ -116,7 +116,7 @@ class Company(models.Model):
     phone_number = models.CharField(max_length=17, blank=True, unique=True)
 
 class Driver(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=17, blank=True, unique=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50, blank=False, null=False)
@@ -125,3 +125,4 @@ class Driver(models.Model):
     car_color = models.CharField(max_length=50, blank=False, null=False)
     car_license_plate = models.CharField(max_length=50, blank=False, null=False)
     
+
