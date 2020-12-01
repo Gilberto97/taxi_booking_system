@@ -12,6 +12,6 @@ urlpatterns = [
     # Registration page.
     path('register/', views.register, name='register'),
     # Account view page.
-    path('account_view/', views.account_view, name='account_view'),
+    # path('account_view/', views.account_view, name='account_view'),
     
 ]
