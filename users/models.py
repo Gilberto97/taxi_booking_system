@@ -51,16 +51,13 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     Email and password are required. Other fields are optional.
     """
-    ACCOUNT_TYPE_CHOICES = (
-        (0, 'admin'),
-        (1, 'customer'),
-        (2, 'driver'),
-        (3, 'company'),
-    )
     
     email = models.EmailField(unique=True)
-
-    type = models.PositiveSmallIntegerField(choices=ACCOUNT_TYPE_CHOICES)
+    phone_number = models.CharField(max_length=17, blank=True, unique=True)
+    first_name = models.CharField(max_length=50, blank=False, null=False)
+    last_name = models.CharField(max_length=50, blank=False, null=False)
+    card_number = models.CharField(max_length=16, blank=False, null=False)
+    ccv_number = models.CharField(max_length=3, blank=False, null=False)
 
     is_staff = models.BooleanField(
         _('staff status'),
@@ -102,21 +99,11 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 # Create your models here.
 
-class Customer(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    phone_number = models.CharField(max_length=17, blank=True, unique=True)
-    first_name = models.CharField(max_length=50, blank=False, null=False)
-    last_name = models.CharField(max_length=50, blank=False, null=False)
-    card_number = models.CharField(max_length=16, blank=False, null=False)
-    ccv_number = models.CharField(max_length=3, blank=False, null=False)
-
 class Company(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     name = models.CharField(max_length=50, blank=False, null=False)
     phone_number = models.CharField(max_length=17, blank=True, unique=True)
 
 class Driver(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=17, blank=True, unique=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50, blank=False, null=False)
