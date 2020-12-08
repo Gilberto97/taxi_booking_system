@@ -15,10 +15,10 @@ class UserTestCase(TestCase):
         company = Company(phone_number="+441313131313", name="Melani Ltd")
         company.save()
 
-        driver = Driver(phone_number="+441111111111", first_name="Prem", last_name="Kowalski", company=company)
+        driver = Driver(phone_number="+441111111111", first_name="Prem", last_name="Kowalski", company=company, car_model="BWM", car_color="Black", car_license_plate="ABCD1234")
         driver.save()
 
-        customer = User.objects.create_user(email='alex@study.beds.ac.uk', password='secret123', phone_number="+441212121212", first_name="Alex", last_name="Smith", card_number="1234123412341234", ccv_number="123")
+        customer = User.objects.create_user(email='alex@study.beds.ac.uk', password='secret123', phone_number="+441212121212", first_name="Alex", last_name="Smith")
 
     # Let's check if users were created
     def test_users_created(self):

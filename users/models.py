@@ -56,8 +56,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone_number = models.CharField(max_length=17, blank=True, unique=True)
     first_name = models.CharField(max_length=50, blank=False, null=False)
     last_name = models.CharField(max_length=50, blank=False, null=False)
-    card_number = models.CharField(max_length=16, blank=False, null=False)
-    ccv_number = models.CharField(max_length=3, blank=False, null=False)
 
     is_staff = models.BooleanField(
         _('staff status'),
