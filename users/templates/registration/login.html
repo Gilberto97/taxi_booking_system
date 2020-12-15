@@ -1,29 +1,17 @@
 
 {% extends "trips/base.html" %}
-
-
-{% block page_header %}
-<h2>Log in to your account.</h2>
-{% endblock page_header %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-
 <div id="results">
 
     <div class="container-fluid">
         <form method="post" action="{% url 'users:login' %}" class="form">
             {% csrf_token %}
-            {{ form.as_p }} 
+            {{ form|crispy }} 
             <button name="submit" class="btn btn-primary">Log in</button>
-          
             <input type="hidden" name="next" value="" />
         </form>
-        <div class="d-flex flex-column">
-            <a class="m-auto" href="">Password reset</a>
-        </div>
     </div>
-
 </div>
-
-
 {% endblock content %}
