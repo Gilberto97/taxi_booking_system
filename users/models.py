@@ -109,5 +109,8 @@ class Driver(models.Model):
     car_model = models.CharField(max_length=50, blank=False, null=False)
     car_color = models.CharField(max_length=50, blank=False, null=False)
     car_license_plate = models.CharField(max_length=50, blank=False, null=False)
+
+    def __str__(self):
+        return self.first_name +" "+ self.last_name
     
 

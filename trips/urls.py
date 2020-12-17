@@ -5,4 +5,7 @@ app_name = 'trips'
 urlpatterns = [
     # Include default auth urls.
     path('', views.index, name ='index'),
+    path('book/', views.book_trip, name ='book'),
+
+    
 ]
