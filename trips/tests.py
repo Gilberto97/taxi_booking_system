@@ -27,7 +27,6 @@ class TripTestCase(TestCase):
     def test_trip_created(self):
 
         trip = Trip.objects.get(pick_up_place="Luton")
-        # print(trip.driver.company.name)
         is_trip_created=bool(trip)
         self.assertEqual(is_trip_created,True)
 
