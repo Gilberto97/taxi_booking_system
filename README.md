@@ -22,5 +22,7 @@ python manage.py runserver
 python manage.py test
 ```
 ## Book-Trip
+```bash
 booking time must be in the following format:
 year-month-day (make sure you put the dash in between elements)
+```
