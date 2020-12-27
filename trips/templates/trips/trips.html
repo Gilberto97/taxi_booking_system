@@ -13,7 +13,7 @@
         <p> <b><span style="color:black;"> AT: </b>   {{trip.pick_up_time}}</p>
         <p> <b><span style="color:black;">GOING TO: </b>   {{trip.drop_off_place}}</p>
         <p> <b><span style="color:black;">Taxi Driver Information:</b> {{trip.driver.first_name}}, {{trip.driver.car_color}} {{trip.driver.car_model}}, {{trip.driver.car_license_plate}} </p>
-        <a href="#" class="btn btn-danger">Delete</a>
+        <a href="{% url 'trips:delete-trip' id=trip.id %}" class="btn btn-danger">Delete</a>
     </div>
     </div>
     

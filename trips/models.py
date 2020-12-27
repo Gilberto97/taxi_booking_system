@@ -1,7 +1,9 @@
 from django.db import models
+# from address.models import AddressField
+from users.models import Driver, User
 
-from users.models import User, Driver
 
+# Create your models here.
 
 class Trip(models.Model):
     PAYMENT_METHODS = (

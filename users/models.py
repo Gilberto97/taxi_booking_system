@@ -35,7 +35,7 @@ class CustomUserManager(BaseUserManager):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
         extra_fields.setdefault('is_active', True)
-        extra_fields.setdefault('type', 0)
+        
 
         if extra_fields.get('is_staff') is not True:
             raise ValueError(_('Superuser must have is_staff=True.'))
@@ -100,6 +100,10 @@ class User(AbstractBaseUser, PermissionsMixin):
 class Company(models.Model):
     name = models.CharField(max_length=50, blank=False, null=False)
     phone_number = models.CharField(max_length=17, blank=True, unique=True)
+
+    def __str__(self):
+        return self.name
+    
 
 class Driver(models.Model):
     phone_number = models.CharField(max_length=17, blank=True, unique=True)
