@@ -21,4 +21,6 @@ python manage.py runserver
 ```bash
 python manage.py test
 ```
-
+## Book-Trip
+booking time must be in the following format:
+year-month-day (make sure you put the dash in between elements)
