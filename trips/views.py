@@ -12,7 +12,7 @@ def index(request):
 
 def book_trip(request):
 
-    form = InputForm(request.POST)
+    form = InputForm(request.POST or None)
     if request.method =='POST':
        
         if form.is_valid():
