@@ -3,7 +3,6 @@
 ## Installation
 
 ```bash
-git clone git@github.com:Gilberto97/taxi_booking_system.git
 cd taxi_booking_system
 virtualenv venv 
 # or this instead: python -m virtualenv venv
