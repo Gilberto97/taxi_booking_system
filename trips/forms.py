@@ -11,7 +11,7 @@ class InputForm(forms.ModelForm):
             ('1', 'Card'),
             ('2', 'Cash'),
     )
-    pick_up_time = forms.DateTimeField()
+    pick_up_time = forms.DateTimeField(label="Pick up time (format: YYYY-MM-DD HH:MM)")
     pick_up_place = forms.CharField(max_length=100, label = 'Pick up place')
     payment_method  = forms.ChoiceField(widget=forms.RadioSelect,choices=PAYMENT_METHODS)
     drop_off_place = forms.CharField(max_length=80, label = 'Drop off place')
