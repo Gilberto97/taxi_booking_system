@@ -48,12 +48,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     """
     A class implementing a fully featured User model with
     admin-compliant permissions.
-
     Email and password are required. Other fields are optional.
     """
     
     email = models.EmailField(unique=True)
-    phone_number = models.CharField(max_length=17, blank=True, unique=True)
+    phone_number = models.CharField(max_length=17, blank=True)
     first_name = models.CharField(max_length=50, blank=False, null=False)
     last_name = models.CharField(max_length=50, blank=False, null=False)
 
@@ -116,5 +115,3 @@ class Driver(models.Model):
 
     def __str__(self):
         return self.first_name +" "+ self.last_name
-    
-

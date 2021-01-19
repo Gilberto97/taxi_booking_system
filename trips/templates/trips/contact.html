@@ -1,0 +1,86 @@
+{% extends 'trips/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: right;
+  width: 33.33%;
+  padding: 40px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+
+<div class="clearfix">
+  <div class="box" style="background-color: transparent">
+
+  </div>
+  <div class="box" style="background-color: transparent">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>contact form</title>
+        
+    </head>
+    
+    <body>
+    
+    <link href="contact-form.css" rel="stylesheet">
+    
+    <div class="fcf-body">
+    
+        <div id="fcf-form">
+        <h3 class="fcf-h3"> </h3>
+        <form method="post" action="{% url 'trips:contact' %}">
+            {% csrf_token %}
+            <div class="fcf-form-group">
+                <label for="Name" class="fcf-label">Your name</label>
+                <div class="fcf-input-group">
+                    <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                </div>
+            </div>
+            <div class="fcf-form-group">
+                <label for="Email" class="fcf-label">Your email address</label>
+                <div class="fcf-input-group">
+                    <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                </div>
+            </div>
+            <div class="fcf-form-group">
+                <label for="Message" class="fcf-label">Your message</label>
+                <div class="fcf-input-group">
+                    <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="300" required></textarea>
+                </div>
+            </div>
+            <div class="fcf-form-group">
+                <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+            </div>
+            <div class="fcf-credit" id="fcf-credit">
+            </div>
+        </form>
+        </div>
+    
+    </div>
+  </div>
+  <div class="box" style="background-color: transparent">
+    <h2 class="ex1">Contact us </h3>
+    <p class="">Phone Number: 020800800</p>
+    <p class="">Email: booking_taxi@beds.ac.uk</p>
+    <p class="">Andress: Englad, BD1 4LU</p>
+  </div>
+</div>
+
+
+
+{% endblock  %}

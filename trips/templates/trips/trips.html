@@ -5,11 +5,10 @@
     <p>It is free and it always will be for free.</p>
 </div>
 {% for trip in trips_list %}
-   
-    <div class="card w-50">
-    <div class="card-body">
+    <div class="card w-50 p body" >
+    <div class="card-body" style="background-color: rgb(252, 252, 252);">
         <h5><center><b><span style="color:black;">Trip information: </b><center></h5>
-        <p> <b><span style="color:black;">FROM:</b> {{trip.pick_up_place}}</p>
+        <p> <b><span style="color:rgb(155, 15, 15);">FROM:</b> {{trip.pick_up_place}}</p>
         <p> <b><span style="color:black;"> AT: </b>   {{trip.pick_up_time}}</p>
         <p> <b><span style="color:black;">GOING TO: </b>   {{trip.drop_off_place}}</p>
         <p> <b><span style="color:black;">Taxi Driver Information:</b> {{trip.driver.first_name}}, {{trip.driver.car_color}} {{trip.driver.car_model}}, {{trip.driver.car_license_plate}} </p>

@@ -1,0 +1,59 @@
+
+{% extends 'trips/base.html' %}
+{% block content %}
+<h1 style="text-align:center;">ABOUT</h1>
+
+
+<div class="jumbotron jumbotron-fluid input">
+<div class="container">
+    <h1 class="display-22"></h1>
+    <p class="nav" style="text-align: center;"><b>Thank you for choosing us! Booking Taxi is based in Englad with offices in three major countries like Sri Lanka, Poland and Romania. It has been offline on market sience God knows, more exactly 2020. Booking taxi is one of the most used application to book a taxi. The reason behind is that it is FREE! We never let our customers down and we work 24/7 every day expect Christmas day. Our servicies operation is around the world</b></p>
+</div>
+</div>
+
+
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    </head>
+    
+    <body>
+    
+    
+    
+    <div class="w3-content w3-section" id ="frame" style="max-width:800px">
+    <img class="mySlides" src="/static/img/4.jpeg" style="width:100%">
+    <img class="mySlides" src="/static/img/5.jpeg" style="width:100%">
+    <img class="mySlides" src="/static/img/6.jpeg" style="width:100%">
+    </div>
+    
+    <script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+    </script>
+    
+    </body>
+
+
+</div>
+</body>
+</html>
+
+{% endblock  %}
+
+
