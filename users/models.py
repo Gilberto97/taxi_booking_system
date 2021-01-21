@@ -102,7 +102,6 @@ class Company(models.Model):
 
     def __str__(self):
         return self.name
-    
 
 class Driver(models.Model):
     phone_number = models.CharField(max_length=17, blank=True, unique=True)
