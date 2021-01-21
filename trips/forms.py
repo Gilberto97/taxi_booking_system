@@ -10,25 +10,8 @@ class InputForm(forms.ModelForm):
         ('1', 'Card'),
         ('2', 'Cash'),
     )
-<<<<<<< HEAD
-    pick_up_time = forms.DateTimeField(widget=forms.TextInput(attrs={'id':'pick_up_location','class': 'datetimepicker-input', 'data-toggle':'datetimepicker', 'data-target':'pick_up_location'}))
-=======
-    pick_up_time = forms.DateTimeField(label="Pick up time (format: YYYY-MM-DD HH:MM)")
-    pick_up_place = forms.CharField(max_length=100, label = 'Pick up place')
-    payment_method  = forms.ChoiceField(widget=forms.RadioSelect,choices=PAYMENT_METHODS)
-    drop_off_place = forms.CharField(max_length=80, label = 'Drop off place')
-    
-    class Meta:
-        model = Trip
-        fields = ('pick_up_place','drop_off_place','pick_up_time','payment_method','driver')
-
-
-
-
->>>>>>> c3484ee4645ca5e34cb45f7f4bd7f9a0d720b800
-
+    pick_up_time = forms.DateTimeField( widget=forms.TextInput(attrs={'id':'pick_up_location','class': 'datetimepicker-input', 'data-toggle':'datetimepicker', 'data-target':'pick_up_location'}))
     pick_up_place = forms.CharField(max_length=100, label='Pick up place')
-                                    
     payment_method = forms.ChoiceField(widget=forms.RadioSelect, choices=PAYMENT_METHODS)
     drop_off_place = forms.CharField(max_length=80, label='Drop off place')
 

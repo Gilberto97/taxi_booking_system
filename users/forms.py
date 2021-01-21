@@ -14,4 +14,3 @@ class RegisterForm(UserCreationForm):
         model = User
         fields = ("first_name", "last_name", "email", "phone_number")
 
-# We dont put the login form here because the build-in django login form is enough!
